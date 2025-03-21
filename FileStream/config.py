@@ -15,10 +15,10 @@ class Telegram:
     FORCE_SUB_ID = env.get('FORCE_SUB_ID', None)
     FORCE_SUB = env.get('FORCE_UPDATES_CHANNEL', False)
     FORCE_SUB = True if str(FORCE_SUB).lower() == "true" else False
-    SLEEP_THRESHOLD = int(env.get("SLEEP_THRESHOLD", "60"))
-    FILE_PIC = env.get('FILE_PIC', "https://graph.org/file/5bb9935be0229adf98b73.jpg")
-    START_PIC = env.get('START_PIC', "https://graph.org/file/290af25276fa34fa8f0aa.jpg")
-    VERIFY_PIC = env.get('VERIFY_PIC', "https://graph.org/file/736e21cc0efa4d8c2a0e4.jpg")
+    SLEEP_THRESHOLD = int(env.get("SLEEP_THRESHOLD", "0"))
+    FILE_PIC = env.get('FILE_PIC', "")
+    START_PIC = env.get('START_PIC', "")
+    VERIFY_PIC = env.get('VERIFY_PIC', "")
     MULTI_CLIENT = False
     FLOG_CHANNEL = int(env.get("FLOG_CHANNEL", "-1002366692007"))   # Logs channel for file logs
     ULOG_CHANNEL = int(env.get("ULOG_CHANNEL", "-1002491191746"))   # Logs channel for user logs
@@ -28,7 +28,7 @@ class Telegram:
 
 class Server:
     PORT = int(env.get("PORT", 8080))
-    BIND_ADDRESS = str(env.get("BIND_ADDRESS", "0.0.0.0"))
+    BIND_ADDRESS = str(env.get("BIND_ADDRESS", "file-to-link-100-bot"))
     PING_INTERVAL = int(env.get("PING_INTERVAL", "1200"))
     HAS_SSL = str(env.get("HAS_SSL", "0").lower()) in ("1", "true", "t", "yes", "y")
     NO_PORT = str(env.get("NO_PORT", "0").lower()) in ("1", "true", "t", "yes", "y")
